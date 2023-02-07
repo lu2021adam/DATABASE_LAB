@@ -12,8 +12,8 @@ public class DataBase{
     }
 
     public static void lookupAccount(String accountName, String [] userNames, Integer [] userBalances){
-        System.out.println(Arrays.toString(userNames));
-        System.out.println(Arrays.toString(userBalances));
+//        System.out.println(Arrays.toString(userNames)); Viewing the arrays
+//        System.out.println(Arrays.toString(userBalances)); Viewing the arrays
         for(int i = 0; i < userNames.length; i++){
             if(userNames[i].equals(accountName)){
                 System.out.println("Balance for " + accountName + " is $" + userBalances[i]);
@@ -25,10 +25,10 @@ public class DataBase{
     public static String userWelcome(String [] userNames, Integer [] userBalances){
         Scanner userInput = new Scanner(System.in);
         System.out.println("Welcome");
+        Integer index = 0;
         while(true){
         System.out.println("Please choose an option: [n]ew account, [d]isplay balance, [q]uit:");
         String userAction = userInput.nextLine();
-        Integer index = 0;
         if(userAction.equals("n")){
             System.out.println("Please enter a user name for the account: ");
             String userName = userInput.nextLine();
