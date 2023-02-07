@@ -14,7 +14,7 @@ public class DataBase{
     public static void lookupAccount(String accountName, String [] userNames, Integer [] userBalances){
         for(int i = 0; i < userNames.length; i++){
             if(userNames[i].equals(accountName)){
-                System.out.println(userBalances[i]);
+                System.out.println("Balance for " + accountName + "is $" + userBalances[i]);
             } else {
                 System.out.println("No account exists for this user, please create an account to view a balance for this user name.");
             }
@@ -24,6 +24,7 @@ public class DataBase{
     public static String userWelcome(String [] userNames, Integer [] userBalances){
         Scanner userInput = new Scanner(System.in);
         System.out.println("Welcome");
+        while(true){
         System.out.println("Please choose an option: [n]ew account, [d]isplay balance, [q]uit:");
         String userAction = userInput.nextLine();
         if(userAction.equals("n")){
@@ -38,10 +39,11 @@ public class DataBase{
             System.out.println("Please enter a name to see the balance: "); 
             String accountName = userInput.nextLine();
             lookupAccount(accountName, userNames, userBalances);
-        } else if(userAction.equals("q")){
-            return "End of the program";
-        } else {
+        } else if(userAction.equals("q")) {
+            break;
+        } else{
             System.out.println("Please enter a valid letter (n, d, or q)");
+        }
         }
         return "End of the program";
     }
