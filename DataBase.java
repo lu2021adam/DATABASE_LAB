@@ -27,9 +27,9 @@ public class DataBase{
         System.out.println("Welcome");
         Integer index = 0;
         while(true){
-        System.out.println("Please choose an option: [n]ew account, [d]isplay balance, [q]uit:");
+        System.out.println("Please choose an option: [o]pen new account, [d]isplay balance, [q]uit:");
         String userAction = userInput.nextLine();
-        if(userAction.equals("n")){
+        if(userAction.equals("o")){
             System.out.println("Please enter a user name for the account: ");
             String userName = userInput.nextLine();
             System.out.println("Please enter a starting balance for the account: ");
